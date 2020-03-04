@@ -2,7 +2,7 @@
   "name": "covid-fact",
   "version": "1.0.0",
   "description": "fact of covid-19",
-  "author": "lon9",
+  "author": "Koji Tadokoro",
   "private": true,
   "scripts": {
     "dev": "nuxt",

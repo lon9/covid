@@ -5,5 +5,6 @@ import death from '~/data/death_rate.json'
 export const state = () => ({
   labels,
   cure,
-  death
+  death,
+  updatedAt: new Date()
 })
