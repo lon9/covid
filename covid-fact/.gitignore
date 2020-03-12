@@ -90,4 +90,5 @@ sw.*
 *.swp
 
 data/*
+static/data/*
 !.gitkeep
