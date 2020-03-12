@@ -5,11 +5,13 @@
         <div class="container">
           <h1 class="title">COVID-19 fact</h1>
           <h2 class="subtitle">
-            This is the additional information of COVID-19. Data used on the
-            site is based on
-            <a
-              href="https://vdata.nikkei.com/newsgraphics/coronavirus-world-map/"
-              >新型コロナ感染 世界マップ</a
+            This page shows the transition of the number of infected,
+            struggling, recovered, and deaths add over the world, and also shows
+            pergentage of it.<br />
+            The data based on
+            <a href="https://github.com/CSSEGISandData/COVID-19"
+              >2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by
+              Johns Hopkins CSSE</a
             ><br />
             Updated at {{ updatedAt }}
           </h2>
