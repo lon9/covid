@@ -115,7 +115,7 @@ export default {
             backgroundColor: 'rgba(172, 7, 15)'
           },
           {
-            label: 'Struggle',
+            label: 'Struggling',
             data: this.data.confirmed.map((conf, i) => {
               return (
                 ((conf - this.data.deaths[i] - this.data.recovered[i]) / conf) *
