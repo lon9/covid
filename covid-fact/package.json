@@ -1,7 +1,7 @@
 {
-  "name": "covid-fact",
+  "name": "covid-19-fact",
   "version": "1.0.0",
-  "description": "fact of covid-19",
+  "description": "The fact of covid-19",
   "author": "Koji Tadokoro",
   "private": true,
   "scripts": {
