@@ -10,7 +10,7 @@ const URLS = [
 ]
 
 async function main() {
-  if (!fs.existsSync('static/data')) fs.mkdirSync('static/data')
+  if (!fs.existsSync('assets/data')) fs.mkdirSync('assets/data')
   let md5hash = crypto.createHash('md5')
   md5hash.update('World')
   const worldKey = md5hash.digest('hex')
@@ -26,7 +26,7 @@ async function main() {
       data.forEach((row, j) => {
         if (i === 0 && j === 0) {
           return fs.writeFileSync(
-            'static/data/labels.json',
+            'assets/data/labels.json',
             JSON.stringify(row.slice(4))
           )
         } else if (j === 0) return
@@ -52,9 +52,9 @@ async function main() {
       console.error(err)
     }
     for (const k in countries) {
-      fs.writeFileSync(`static/data/${k}.json`, JSON.stringify(countries[k]))
+      fs.writeFileSync(`assets/data/${k}.json`, JSON.stringify(countries[k]))
     }
-    fs.writeFileSync('static/data/countries.json', JSON.stringify(countryNames))
+    fs.writeFileSync('assets/data/countries.json', JSON.stringify(countryNames))
   }
 }
 

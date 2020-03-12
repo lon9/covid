@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="select">
-      <select v-model="country" @change="countryChanged">
+      <select v-model="country" @change="fetchData">
         <option v-for="ctr in countries" :key="ctr">
           {{ ctr }}
         </option>
@@ -20,18 +20,14 @@ export default {
   components: {
     BarChart
   },
-  async asyncData({ $axios }) {
+  async asyncData() {
     const md5hash = crypto.createHash('md5')
     md5hash.update('World')
-    const res = await Promise.all([
-      $axios.$get('/data/countries.json'),
-      $axios.$get('/data/labels.json'),
-      $axios.$get(`/data/${md5hash.digest('hex')}.json`)
-    ])
+    const data = await import(`~/assets/data/${md5hash.digest('hex')}.json`)
     return {
-      countries: res[0],
-      labels: res[1],
-      data: res[2]
+      countries: require('~/assets/data/countries.json'),
+      labels: require('~/assets/data/labels.json'),
+      data
     }
   },
   data() {
@@ -133,12 +129,14 @@ export default {
       }
     }
   },
+  async mounted() {
+    await this.fetchData()
+  },
   methods: {
-    async countryChanged() {
-      console.log(this.country)
+    async fetchData() {
       const md5hash = crypto.createHash('md5')
       md5hash.update(this.country)
-      this.data = await this.$axios.$get(`/data/${md5hash.digest('hex')}.json`)
+      this.data = await import(`~/assets/data/${md5hash.digest('hex')}.json`)
     }
   }
 }
