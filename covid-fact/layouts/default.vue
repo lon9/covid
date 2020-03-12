@@ -6,8 +6,8 @@
           <h1 class="title">COVID-19 fact</h1>
           <h2 class="subtitle">
             This page shows the transition of the number of infected,
-            struggling, recovered, and deaths add over the world, and also shows
-            pergentage of it.<br />
+            struggling, recovered, and deaths all over the world, and also shows
+            it as its percentage.<br />
             The data based on
             <a href="https://github.com/CSSEGISandData/COVID-19"
               >2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by
