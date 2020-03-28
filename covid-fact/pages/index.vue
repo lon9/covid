@@ -79,19 +79,19 @@ export default {
           {
             label: 'Deaths',
             data: this.data.deaths,
-            backgroundColor: 'rgba(93, 12, 12)'
+            backgroundColor: 'rgba(187, 222, 251, 1)'
           },
           {
             label: 'Recovered',
             data: this.data.recovered,
-            backgroundColor: 'rgba(172, 7, 15)'
+            backgroundColor: 'rgba(132, 194, 248, 1)'
           },
           {
             label: 'Struggling',
             data: this.data.confirmed.map((conf, i) => {
               return conf - this.data.deaths[i] - this.data.recovered[i]
             }),
-            backgroundColor: 'rgba(255, 0, 0)'
+            backgroundColor: 'rgba(66, 165, 245, 1)'
           }
         ],
         labels: this.labels
@@ -105,14 +105,14 @@ export default {
             data: this.data.confirmed.map((conf, i) => {
               return (this.data.deaths[i] / conf) * 100
             }),
-            backgroundColor: 'rgba(93, 12, 12)'
+            backgroundColor: 'rgba(187, 222, 251, 1)'
           },
           {
             label: 'Recovered',
             data: this.data.confirmed.map((conf, i) => {
               return (this.data.recovered[i] / conf) * 100
             }),
-            backgroundColor: 'rgba(172, 7, 15)'
+            backgroundColor: 'rgba(132, 194, 248, 1)'
           },
           {
             label: 'Struggling',
@@ -122,7 +122,7 @@ export default {
                 100
               )
             }),
-            backgroundColor: 'rgba(255, 0, 0)'
+            backgroundColor: 'rgba(66, 165, 245, 1)'
           }
         ],
         labels: this.labels
