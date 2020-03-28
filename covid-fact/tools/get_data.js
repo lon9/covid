@@ -10,9 +10,9 @@ const URLS = [
 ]
 
 const KINDS = [
-  'Confirmed',
-  'Deaths',
-  'Recovered'
+  'confirmed',
+  'deaths',
+  'recovered'
 ]
 
 async function main() {
