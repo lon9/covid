@@ -9,11 +9,7 @@ const URLS = [
   'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv'
 ]
 
-const KINDS = [
-  'confirmed',
-  'deaths',
-  'recovered'
-]
+const KINDS = ['confirmed', 'deaths', 'recovered']
 
 async function main() {
   if (!fs.existsSync('assets/data')) fs.mkdirSync('assets/data')

@@ -11,6 +11,8 @@
     <BarChart :chart-data="data1" :options="chart1Option" />
     <p class="is-size-4">Percentage</p>
     <BarChart :chart-data="data2" :options="chart2Option" />
+    <p class="is-size-4">Death rate in closed cases</p>
+    <BarChart :chart-data="data3" :options="chart3Option" />
   </div>
 </template>
 <script>
@@ -52,6 +54,25 @@ export default {
         }
       },
       chart2Option: {
+        scales: {
+          xAxes: [
+            {
+              stacked: true
+            }
+          ],
+          yAxes: [
+            {
+              stacked: true,
+              ticks: {
+                beginAtZero: true,
+                min: 0,
+                max: 100
+              }
+            }
+          ]
+        }
+      },
+      chart3Option: {
         scales: {
           xAxes: [
             {
@@ -123,6 +144,24 @@ export default {
               )
             }),
             backgroundColor: 'rgba(66, 165, 245, 1)'
+          }
+        ],
+        labels: this.labels
+      }
+    },
+    data3() {
+      return {
+        datasets: [
+          {
+            label: 'Deaths/(Deaths+Recovered)',
+            data: this.data.confirmed.map((conf, i) => {
+              return (
+                (this.data.deaths[i] /
+                  (this.data.deaths[i] + this.data.recovered[i])) *
+                100
+              )
+            }),
+            backgroundColor: 'rgba(187, 222, 251, 1)'
           }
         ],
         labels: this.labels
